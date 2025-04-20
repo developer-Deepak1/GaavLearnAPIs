@@ -1,0 +1,12 @@
+[
+  {
+    "ContainingType": "GaavLearnAPIs.Controllers.UserController",
+    "Method": "GetUsersList",
+    "RelativePath": "api/User/GetUsersList",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  }
+]

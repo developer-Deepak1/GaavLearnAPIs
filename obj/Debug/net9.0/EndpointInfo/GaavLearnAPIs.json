@@ -1,0 +1,36 @@
+{
+  "openapi": "3.0.4",
+  "info": {
+    "title": "GaavLearnAPIs",
+    "version": "1.0"
+  },
+  "paths": {
+    "/api/User/GetUsersList": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "Bearer": {
+        "type": "apiKey",
+        "description": "JWT Authorization: Bearer asdfghjsuwywguwb",
+        "name": "Authorization",
+        "in": "header"
+      }
+    }
+  },
+  "security": [
+    {
+      "Bearer": [ ]
+    }
+  ]
+}
