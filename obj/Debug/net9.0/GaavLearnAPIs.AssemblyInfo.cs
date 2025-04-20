@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GaavLearnAPIs")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e0c7ad312f71a7f79b0aa8a9bea63cae6df6ebb3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fbfe448bf088bc34b09e824883bf6a72e5266b4b")]
 [assembly: System.Reflection.AssemblyProductAttribute("GaavLearnAPIs")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GaavLearnAPIs")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

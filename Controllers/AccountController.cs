@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.IdentityModel.Tokens;
 
@@ -157,6 +158,19 @@ namespace GaavLearnAPIs.Controllers
                 PhoneNumberConfimed=user.PhoneNumberConfirmed,
                 AccessFailedCount=user.AccessFailedCount
             });
+        }
+
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<UserDetailDto>>> GetDetails(){
+  
+         var users = await _userManager.Users.Select(u=>new UserDetailDto{
+            Id=u.Id,
+            Email=u.Email,
+            FullName=u.FullName,
+            Roles=_userManager.GetRolesAsync(u).Result.ToArray()
+         }).ToListAsync();
+
+         return Ok(users);
         }
 
     }

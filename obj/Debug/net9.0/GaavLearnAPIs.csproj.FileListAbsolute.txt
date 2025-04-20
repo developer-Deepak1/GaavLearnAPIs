@@ -170,3 +170,4 @@ F:\DotnetStudy\GaavLearnAPIs\bin\Debug\net9.0\runtimes\win-arm\native\e_sqlite3.
 F:\DotnetStudy\GaavLearnAPIs\bin\Debug\net9.0\runtimes\win-arm64\native\e_sqlite3.dll
 F:\DotnetStudy\GaavLearnAPIs\bin\Debug\net9.0\runtimes\win-x64\native\e_sqlite3.dll
 F:\DotnetStudy\GaavLearnAPIs\bin\Debug\net9.0\runtimes\win-x86\native\e_sqlite3.dll
+F:\DotnetStudy\GaavLearnAPIs\obj\Debug\net9.0\GaavLearnAPIs.sourcelink.json
