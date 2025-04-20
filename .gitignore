@@ -1,0 +1,50 @@
+## Build results
+bin/
+obj/
+out/
+TestResults/
+*.exe
+*.dll
+*.app
+*.log
+
+## User-specific files
+*.user
+*.userosscache
+*.suo
+*.userprefs
+
+## OS generated files
+.DS_Store
+Thumbs.db
+
+## Visual Studio
+.vscode/
+.vs/
+*.dbmdl
+
+## .NET
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+## Rider
+.idea/
+*.sln.iml
+
+## Others
+*.ncrunch*
+*.localhistory
+*.vspscc
+*.vssscc
+
+## Environment
+.env
+appsettings.*.json
+
+# Optional if you're using docker or publishing
+Dockerfile
+*.publishsettings
