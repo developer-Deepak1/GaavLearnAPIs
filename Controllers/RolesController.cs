@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using GaavLearnAPIs.Dtos;
 using GaavLearnAPIs.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -12,6 +13,7 @@ namespace GaavLearnAPIs.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(Roles ="Admin")]
     public class RolesController(RoleManager<IdentityRole> roleManager
     ,UserManager<AppUser> userManager):ControllerBase
     {
@@ -63,6 +65,28 @@ namespace GaavLearnAPIs.Controllers
                 return Ok(new {message="Role deleted Successfully."});
             }
             return BadRequest("Role deleted Failed");
+        }
+        
+        [HttpPost("AssignRole")]
+        public async Task<IActionResult> AssignRole([FromBody] RoleAssignDto roleAssignDto){
+          var user= await _userManager.FindByIdAsync(roleAssignDto.UserId);
+
+          if(user is null){
+           return NotFound("User Not Found");
+          }
+          var role =await _roleManager.FindByIdAsync(roleAssignDto.RoleId);
+
+          if(role is null){
+            return NotFound("Role Not Found");
+          }
+          var result= await _userManager.AddToRoleAsync(user,role.Name!);
+          if(result.Succeeded){
+            return Ok(new {message="Role Assign Successfully"});
+          }
+
+          var error=result.Errors.FirstOrDefault();
+          
+          return BadRequest(error!.Description);
         }
     }
 }

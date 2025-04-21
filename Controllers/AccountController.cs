@@ -15,6 +15,7 @@ namespace GaavLearnAPIs.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class AccountController(UserManager<AppUser> userManager
         , RoleManager<IdentityRole> roleManager
         , IConfiguration configuration
@@ -26,6 +27,7 @@ namespace GaavLearnAPIs.Controllers
 
 
         [HttpPost("Register")]
+        [AllowAnonymous]
         public async Task<ActionResult> Register(RegisterDto registerDto)
         {
             if (!ModelState.IsValid)
@@ -72,6 +74,7 @@ namespace GaavLearnAPIs.Controllers
         }
 
         [HttpPost("login")]
+        [AllowAnonymous]
         public async Task<ActionResult<AuthResponseDto>> Login(LoginDto loginDto)
         {
             if (!ModelState.IsValid)
