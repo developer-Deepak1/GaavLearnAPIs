@@ -13,7 +13,7 @@ namespace GaavLearnAPIs.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize(Roles ="Admin")]
+    [Authorize]
     public class RolesController(RoleManager<IdentityRole> roleManager
     ,UserManager<AppUser> userManager):ControllerBase
     {

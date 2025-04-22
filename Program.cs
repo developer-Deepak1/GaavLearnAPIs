@@ -11,7 +11,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 var JWTsettings = builder.Configuration.GetSection("JWTsetting");
 
-builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlite("Data Source=auth.db"));
+builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlite("Data Source=auth123.db"));
 
 builder.Services.AddIdentity<AppUser, IdentityRole>()
 .AddEntityFrameworkStores<AppDbContext>()
@@ -29,6 +29,7 @@ builder.Services.AddAuthentication(options =>{
         ValidateIssuer = true,
         ValidateAudience = true,
         ValidateLifetime = true,
+        ClockSkew=TimeSpan.Zero,
         ValidateIssuerSigningKey = true,
         ValidAudience = JWTsettings["ValidAudience"],
         ValidIssuer = JWTsettings["ValidIssuer"],
